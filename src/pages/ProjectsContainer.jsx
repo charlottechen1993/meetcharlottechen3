@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { map, uniqueId } from 'lodash';
-import ProjectTiles from '../../components/projects/ProjectTiles';
-import SiteWrapper from '../../components/common/SiteWrapper';
-import { PROJECTS } from '../../json/project.js';
+import ProjectTiles from '../components/projects/ProjectTiles';
+import SiteWrapper from '../components/common/SiteWrapper';
+import { PROJECTS } from '../json/project.js';
 
-class Projects extends Component {
+class ProjectsContainer extends Component {
     importAll = (r) => {
         return r.keys().map(r);
     }
 
     renderTiles = () => {
-        const images = this.importAll(require.context('../../img', false, /\.(png|jpe?g|svg)$/));
+        const images = this.importAll(require.context('../img', false, /\.(png|jpe?g|svg)$/));
 
         return map(PROJECTS, (project, index) => {
             return (
@@ -39,4 +39,4 @@ class Projects extends Component {
     }
 }
 
-export default Projects;
+export default ProjectsContainer;

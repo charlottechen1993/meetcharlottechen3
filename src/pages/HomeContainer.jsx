@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import banner from '../../img/banner.JPG';
+import banner from '../img/banner.JPG';
 
-class Home extends Component {
+class HomeContainer extends Component {
     state = {}
     render() {
         return (
             <div className="home-container">
                 <img src={banner} alt="banner" className="banner-image" />
-                <p>
+                <div className="menu">
                     <p><Link to="/projects">Projects</Link></p>
                     <p><Link to="/contact">Contact</Link></p>
-                </p>
+                </div>
             </div>
         );
     }
 }
 
-export default Home;
+export default HomeContainer;
