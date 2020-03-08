@@ -6,20 +6,33 @@ class ProjectTiles extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: PropTypes.string.isRequired
+            image: null
         };
     }
 
+    static propTypes = {
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string,
+        image: PropTypes.string
+    }
+
     render() {
-        const { title, id } = this.props;
-        
+        const { title, description, id, image } = this.props;
+
         return (
             <div className="project-tiles">
-                <h2>{title}</h2>
-                <Button
-                    type="link"
-                    label="Go to Project"
-                    to={`/project/${id}`} />
+                <img src={image} alt={title} className="tile-image" />
+                <div className="tile-image-overlay">
+                    <div className="text-area">
+                        <div className="title">{title}</div>
+                        <div className="description">{description}</div>
+                    </div>
+                    <Button
+                        appearance="light"
+                        label="Go to Project"
+                        to={`/project/${id}`} />
+                </div>
             </div>
         );
     }

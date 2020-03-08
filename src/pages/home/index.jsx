@@ -7,7 +7,7 @@ class Home extends Component {
     render() {
         return (
             <div className="home-container">
-                <img src={banner} alt="banner"/>
+                <img src={banner} alt="banner" className="banner-image" />
                 <p>
                     <p><Link to="/projects">Projects</Link></p>
                     <p><Link to="/contact">Contact</Link></p>

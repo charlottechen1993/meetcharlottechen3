@@ -10,8 +10,9 @@ class Button extends Component {
 
     static propTypes = {
         label: PropTypes.string,
-        type: PropTypes.string,
-        to: PropTypes.string
+        appearance: PropTypes.string,
+        to: PropTypes.string,
+        onclick: PropTypes.func
     }
 
     static defaultProps = {
@@ -19,17 +20,20 @@ class Button extends Component {
     }
 
     render() {
-        const { type, to, label } = this.props;
+        const { to, label, appearance } = this.props;
 
-        if (type === "link") {
+        if (to) {
             return (
-                <div>
+                <div className={`btn-${appearance}`}>
                     <Link to={to}>{label}</Link>
                 </div>
             )
         }
-
-        return <button type="button">{label}</button>
+        return (
+            <button className={`btn-${appearance}`} type="button" onclick={onclick}>
+                {label}
+            </button>
+        )
     }
 }
 
