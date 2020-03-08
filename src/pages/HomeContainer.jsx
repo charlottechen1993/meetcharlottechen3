@@ -10,6 +10,7 @@ class HomeContainer extends Component {
                 <img src={banner} alt="banner" className="banner-image" />
                 <div className="menu">
                     <p><Link to="/projects">Projects</Link></p>
+                    <p><Link to="/experience">Experience</Link></p>
                     <p><Link to="/contact">Contact</Link></p>
                 </div>
             </div>
