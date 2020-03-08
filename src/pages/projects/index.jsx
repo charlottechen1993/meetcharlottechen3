@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { forEach, map, uniqueId } from 'lodash';
+import { map, uniqueId } from 'lodash';
 import ProjectTiles from '../../components/projects/ProjectTiles';
+import SiteWrapper from '../../components/common/SiteWrapper';
 import { PROJECTS } from '../../json/project.js';
 
 class Projects extends Component {
@@ -27,11 +28,13 @@ class Projects extends Component {
 
     render() {
         return (
-            <Container className="project-container">
-                <Row>
-                    {this.renderTiles()}
-                </Row>
-            </Container>
+            <SiteWrapper title="Project">
+                <Container className="project-container" fluid={true}>
+                    <Row>
+                        {this.renderTiles()}
+                    </Row>
+                </Container>
+            </SiteWrapper>
         );
     }
 }
