@@ -1,19 +1,21 @@
 .banner {
     position: fixed;
-    width: inherit;
-    height: 100vh;
-    overflow: hidden; 
+    top: 0;
+    width: 100%;
+    height: 5rem;
+    overflow: hidden;
+    z-index: 1;
 
     img {
         display: block;
-        height: 100%;
+        width: 100%;
         left: 0;
-        transform: translate(-20%, 0);
+        transform: translate(0, -50%);
     }    
 
     .btn-light {
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         top: 1rem;
         left: 1rem;
     }
@@ -22,7 +24,29 @@
         position: absolute;
         color: white;
         z-index: 1;
+        left: auto;
+        right: auto;
+        width: 100%;
         top: 20%;
         left: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .banner {
+        width: inherit;
+        height: 100vh;
+
+        img {
+            height: 100%;
+            width: initial;
+            transform: translate(-20%, 0);
+        }    
+
+        h1 {
+            z-index: 1;
+            top: 20%;
+            left: 1rem;
+        }
     }
 }

@@ -29,7 +29,7 @@ class ProjectsContainer extends Component {
     render() {
         return (
             <SiteWrapper title="Project">
-                <Container className="project-container" fluid={true}>
+                <Container className="project-container">
                     <Row>
                         {this.renderTiles()}
                     </Row>
